@@ -4,6 +4,8 @@ public enum ConstantesEnum {
 
 	IMAGEM_ASSENTO_VERDE("/static/img/imgPoltronaVerde.jpg"),
 	IMAGEM_ASSENTO_AZUL("/static/img/imgPoltronaAzul.jpg"),
+	IMAGEM_ASSENTO_VERMELHO("/static/img/imgPoltronaVermelha.jpg"),
+	IMAGEM_BRANCA("/static/img/imgBranca.jpg"),
 	CAMINHO_JQUERY_JS("../static/js/jquery-1.3.2.min.js"),
 	CAMINHO_SCRIPT_JS("../static/js/script.js"),
 	CAMINHO_CUFON_JS("../static/js/cufon-yui.js"),
