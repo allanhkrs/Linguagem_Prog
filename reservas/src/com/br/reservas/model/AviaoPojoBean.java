@@ -2,7 +2,7 @@ package com.br.reservas.model;
 
 import com.br.reservas.util.ConstantesEnum;
 
-public class ImagemPojoBean {
+public class AviaoPojoBean {
 	
 
 	private String imagem = ConstantesEnum.IMAGEM_ASSENTO_AZUL.getConstante();

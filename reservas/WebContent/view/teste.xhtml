@@ -20,27 +20,41 @@
 
 <h:body>
 	<div>
-		<c:forEach begin="1" end="3" step="1">
-			<c:forEach var="i" begin="1" end="28" step="1">
-				<p:graphicImage value="#{imagemBean.imagem}" width="20" height="20" id="assento_${i}"/>
+		<h:form>
+		<c:forEach var="i" begin="0" end="5" step="1">
+			<c:forEach var="j" begin="1" end="28" step="1">
+<!-- 				preenche em branco assentos da primeira fileira invalidos -->
+				<c:if test="${(i == 0) and ((j==1) or (j==2) or (j==3) or (j==4))}">
+					<p:graphicImage value="#{aviaoBean.imagem}" width="20" height="20" style="border:0"/>
+				</c:if>		
+				
+<!-- 				preenche em branco assentos da ultima fileira invalidos -->
+				<c:if test="${(i == 5) and ((j==1) or (j==2) or (j==3) or (j==4))}">
+					<p:graphicImage value="#{aviaoBean.imagem}" width="20" height="20" style="border:0"/>
+				</c:if>			
+				
+<!-- 				preenche com o assentos corretos as primeiras e ultimas fileiras				 -->
+				<c:if test="${((i == 0) or (i ==5)) and (j > 4)}">
+					<h:commandLink action="#{aviaoBean.recebeAssento}">
+						<p:graphicImage value="#{aviaoBean.imagem}" width="20" height="20" style="border:0"/>
+						<f:param name="codigoassento" value="${i}${j}" />
+					</h:commandLink>
+				</c:if>
+		
+<!-- 				prenche com os assentos as fileiras do meio -->
+				<c:if test="${(i == 1) or (i == 2) or (i == 3) or (i == 4)}">
+					<h:commandLink action="#{aviaoBean.recebeAssento}">
+						<p:graphicImage value="#{aviaoBean.imagem}" width="20" height="20" style="border:0"/>
+						<f:param name="codigoassento" value="${i}${j}" />
+					</h:commandLink>
+				</c:if>				
 			</c:forEach>
 			<br/>
+			<c:if test="${i==2}">
+				<br/>
+			</c:if>
 		</c:forEach>
-		
-		<br/>
-	
-		<c:forEach var="i" begin="1" end="28" step="1">
-			<h:outputLabel  value="${i}  "/>
-		</c:forEach>
-		
-		<br/><br/>
-		
-		<c:forEach begin="1" end="3" step="1">
-			<c:forEach var="i" begin="1" end="28" step="1">
-				<p:graphicImage value="#{imagemBean.imagem}" width="20" height="20" id="assento_${i}" />
-			</c:forEach>
-			<br/>
-		</c:forEach>
+		</h:form>
 	</div>
 		
 </h:body>
