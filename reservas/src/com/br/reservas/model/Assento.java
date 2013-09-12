@@ -6,6 +6,7 @@ public class Assento {
 	private int fileira = 0;
 	private int numeroAssento = 0;
 	private boolean reservado = false;
+	private String imgStatusAssento = null;
 	
 	public Assento() {
 		
@@ -15,6 +16,14 @@ public class Assento {
 		this.numeroAssento = Integer.parseInt(pNumeroAssento);
 	}
 	
+	public String getImgStatusAssento() {
+		return imgStatusAssento;
+	}
+
+	public void setImgStatusAssento(String imgStatusAssento) {
+		this.imgStatusAssento = imgStatusAssento;
+	}
+
 	public int getColuna() {
 		return coluna;
 	}
