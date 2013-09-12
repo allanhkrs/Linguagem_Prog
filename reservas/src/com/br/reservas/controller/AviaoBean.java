@@ -1,11 +1,11 @@
 package com.br.reservas.controller;
 
 import java.io.Serializable;
-import java.util.Map;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 import javax.servlet.http.HttpSession;
 
 import com.br.reservas.model.Assento;
@@ -26,7 +26,7 @@ public class AviaoBean implements Serializable {
 	HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
 	
 	public AviaoBean() {
-		session.setAttribute("aviao", this.aviao);
+		this.session.setAttribute("aviao", this.aviao);
 	}
 
 	public String getImagem() {		
@@ -34,10 +34,10 @@ public class AviaoBean implements Serializable {
 		
 		String strNumeroAssento = Integer.toString(contadorDeFila) + Integer.toString(contadordeColuna);
 		
-		Assento assento = new Assento(Integer.parseInt(strNumeroAssento));
+		Assento assento = new Assento(strNumeroAssento);
 		assento.setFileira(contadorDeFila);
 		assento.setColuna(contadordeColuna);
-		this.aviao.setAssentoAoMapa(Integer.parseInt(strNumeroAssento), assento);
+		this.aviao.setAssentoAoMapa(strNumeroAssento, assento);
 		
 		if (assento.isReservado()) {
 			aviaopojo.setImagem(ConstantesEnum.IMAGEM_ASSENTO_VERMELHO.getConstante());
@@ -90,28 +90,34 @@ public class AviaoBean implements Serializable {
 		return aviaopojo.getImagem();
 	}
 	
-	public String recebeAssento() {
+	public void attrListener(ActionEvent evento) {
 		
-		int numeroAssento = Integer.parseInt(getAssentoParametro(fc));
-		Assento tAssento = ((Aviao) session.getAttribute("aviao")).getMapaAssentos().get(numeroAssento);
+		String tNumeroAssento = (String)evento.getComponent().getAttributes().get("strnumeroassento");
+		System.out.println("numero assento: " + tNumeroAssento);		
+		
+//		Assento tAssento = ((Aviao) session.getAttribute("aviao")).getMapaAssentos().get(tNumeroAssento);
 		Aviao tAviao = (Aviao) session.getAttribute("aviao");
-		
-		if (tAssento.isReservado()) {
-			tAssento.setReservado(false);
-			aviaopojo.setImagem(ConstantesEnum.IMAGEM_ASSENTO_AZUL.getConstante());
-		} else {
-			tAssento.setReservado(true);
-			aviaopojo.setImagem(ConstantesEnum.IMAGEM_ASSENTO_AMARELO.getConstante());
-		}
-		
-		return ("success");
+		System.out.println("tAviao: " + tAviao);
+		Assento tAssento = (Assento) tAviao.getMapaAssentos().get(tNumeroAssento);
+//		if (tAssento.isReservado()) {
+//			tAssento.setReservado(false);
+//			aviaopojo.setImagem(ConstantesEnum.IMAGEM_ASSENTO_AZUL.getConstante());
+//		} else {
+//			tAssento.setReservado(true);
+//			aviaopojo.setImagem(ConstantesEnum.IMAGEM_ASSENTO_AMARELO.getConstante());
+//		}
 	}
 	
-	public String getAssentoParametro(FacesContext fc){
-		 
-		Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
-		return params.get("codigoassento");
- 
-	}	
+//	public String getAssentoParametro(FacesContext fc){
+//		 
+////		aqui esta o problema
+//		Map<String,String> params = fc.getExternalContext().getRequestParameterMap();
+//		return params.get("codigoassento");
+// 
+//	}	
+//	
+//	public void attrListener () {
+//
+//	}
 
 }

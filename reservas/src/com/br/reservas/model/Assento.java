@@ -11,9 +11,8 @@ public class Assento {
 		
 	}
 
-
-	public Assento(int pNumeroAssento) {
-		this.numeroAssento = pNumeroAssento;
+	public Assento(String pNumeroAssento) {
+		this.numeroAssento = Integer.parseInt(pNumeroAssento);
 	}
 	
 	public int getColuna() {

@@ -1,24 +1,31 @@
 package com.br.reservas.model;
 
 import java.util.HashMap;
+import java.util.Set;
 
 
 public class Aviao {
 
-	private HashMap<Integer,Assento> mapaAssentos = new HashMap<Integer, Assento>();
+	HashMap mapaAssentos = new HashMap();
 	
-	public void setAssentoAoMapa(int pNumeroAssento, Assento pAssento) {
-		this.mapaAssentos.put(pNumeroAssento,pAssento);
+	public HashMap getMapaAssentos() {
+		
+		Set<String> chaves = mapaAssentos.keySet();
+		
+		for (String chave : chaves) {
+            if(chave != null)  
+                System.out.println(chave + mapaAssentos.get(chave));			
+		}
+		return this.mapaAssentos;
 	}
 
-	public HashMap<Integer, Assento> getMapaAssentos() {
-		return mapaAssentos;
-	}
-
-	public void setMapaAssentos(HashMap<Integer, Assento> mapaAssentos) {
+	public void setMapaAssentos(HashMap mapaAssentos) {
 		this.mapaAssentos = mapaAssentos;
 	}
-	
+
+	public void setAssentoAoMapa(String pNumeroAssento, Assento pAssento) {
+		this.mapaAssentos.put(pNumeroAssento,pAssento);
+	}
 
 		
 }

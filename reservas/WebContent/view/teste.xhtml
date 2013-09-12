@@ -35,17 +35,17 @@
 				
 <!-- 				preenche com o assentos corretos as primeiras e ultimas fileiras				 -->
 				<c:if test="${((i == 0) or (i ==5)) and (j > 4)}">
-					<h:commandLink action="#{aviaoBean.recebeAssento}">
+					<h:commandLink actionListener="#{aviaoBean.attrListener}">
 						<p:graphicImage value="#{aviaoBean.imagem}" width="20" height="20" style="border:0"/>
-						<f:param name="codigoassento" value="${i}${j}" />
+						<f:attribute name="strnumeroassento" value="${i}${j}"/>
 					</h:commandLink>
 				</c:if>
 		
 <!-- 				prenche com os assentos as fileiras do meio -->
 				<c:if test="${(i == 1) or (i == 2) or (i == 3) or (i == 4)}">
-					<h:commandLink action="#{aviaoBean.recebeAssento}">
+					<h:commandLink actionListener="#{aviaoBean.attrListener}">
 						<p:graphicImage value="#{aviaoBean.imagem}" width="20" height="20" style="border:0"/>
-						<f:param name="codigoassento" value="${i}${j}" />
+						<f:attribute name="strnumeroassento" value="${i}${j}"/>
 					</h:commandLink>
 				</c:if>				
 			</c:forEach>
