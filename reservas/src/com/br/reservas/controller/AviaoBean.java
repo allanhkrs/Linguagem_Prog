@@ -40,7 +40,7 @@ public class AviaoBean implements Serializable {
 		this.aviao.setAssentoAoMapa(strNumeroAssento, assento);
 		
 		if (assento.isReservado()) {
-			assento.setImgStatusAssento(ConstantesEnum.IMAGEM_ASSENTO_BRANCO.getConstante());
+			assento.setImgStatusAssento(ConstantesEnum.IMAGEM_ASSENTO_AMARELO.getConstante());
 		} else {
 			if (contadorDeFila == 0 || contadorDeFila == 5) {			
 				switch (contadordeColuna) { 
@@ -102,11 +102,9 @@ public class AviaoBean implements Serializable {
 		if (this.aviao.getMapaAssentos().get(tNumeroAssento).isReservado()){
 			System.out.println("está reservado");
 			this.aviao.getMapaAssentos().get(tNumeroAssento).setReservado(false);
-			this.aviao.getMapaAssentos().get(tNumeroAssento).setImgStatusAssento(ConstantesEnum.IMAGEM_ASSENTO_AZUL.getConstante());
 		} else {
 			System.out.println("não está reservado");
 			this.aviao.getMapaAssentos().get(tNumeroAssento).setReservado(true);
-			this.aviao.getMapaAssentos().get(tNumeroAssento).setImgStatusAssento(ConstantesEnum.IMAGEM_ASSENTO_AMARELO.getConstante());
 		}
 		
 	}
