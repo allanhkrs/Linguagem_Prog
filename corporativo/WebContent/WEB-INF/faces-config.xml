@@ -9,8 +9,14 @@
 		<from-view-id>/view/login.xhtml</from-view-id>
 
 		<navigation-case>
-			<from-outcome>ok</from-outcome>
-			<to-view-id>/view/index.xhtml</to-view-id>
+			<from-outcome>gerente</from-outcome>
+			<to-view-id>/view/indexgerente.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>funcionario</from-outcome>
+			<to-view-id>/view/indexfuncionario.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
 
