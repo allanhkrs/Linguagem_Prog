@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+	<title>Trans-BSI Nerd Airline - Corporativo</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="#{request.contextPath}/static/css/tela.css" />
+	<script type="text/javascript" src="#{request.contextPath}/static/js/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="#{request.contextPath}/static/js/custom_jquery.js"></script>
+	<script type="text/javascript" src="#{request.contextPath}/static/js/jquerypng.js"></script>
+	<script type="text/javascript">$(document).ready(function(){$(document).pngFix( );});</script>
+</h:head>
+
+<h:body id="login-bg">
+	<div id="login-holder">
+		<div id="logo-login">
+			<img src="#{request.contextPath}/static/img/logo.png" width="156" height="40" alt="" />
+		</div>
+		<div class="clear"></div>
+		<h:form>
+			<div id="loginbox">
+				<div id="login-inner">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td><h:outputLabel value="Usuário:" for="usuario"/></td>
+ 							<td>
+ 								<h:inputText styleClass="login-inp" id="usuario" validatorMessage="Digite o nome de usuário com no mínimo 5 caracteres." maxlength="8">
+ 									<f:validateRequired for="usuario"/>
+ 									<f:validateLength minimum="5" maximum="8" for="usuario"/>
+ 								</h:inputText>
+ 							</td>
+ 							<h:message for="usuario" errorStyle="color:yellow; display:block" />
+						</tr>
+						<tr>
+							<td><h:outputLabel value="Senha:" for="senha" /></td>
+							<td>
+								<h:inputSecret styleClass="login-inp" id="senha" validatorMessage="Digite a senha com no mínimo 4 caracteres." maxlength="7">
+									<f:validateLength minimum="4" maximum="7" for="senha"/>
+									<f:validateRequired for="senha" />
+								</h:inputSecret>
+							</td>
+							<h:message for="senha" errorStyle="color:yellow; display:block"/>
+						</tr>
+						<tr>
+							<td></td>
+							<td><h:commandButton image="#{loginBean.botaoSubmit}" action="#{loginBean.validaLogin}"/></td>
+						</tr>
+					</table>
+				</div>
+				<div class="clear"></div>
+				<a href="" class="forgot-pwd">Esqueceu sua Senha?</a>
+			</div>
+		</h:form>
+		<h:form>
+			<div id="forgotbox">
+				<div id="forgotbox-text">Por favor digite seu e-mail para receber sua senha.</div>
+				<div id="forgot-inner">
+					<table border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td><h:outputLabel value="Email:" for="email" /></td>
+								<td>
+									<h:inputText styleClass="login-inp" id="email" validatorMessage="Digite o email no formato: seunome@seuemail.com.br (até 50 caracteres)">
+										<f:validateRequired for="email"/>
+										<f:validateLength maximum="50" />
+										<f:validateRegex pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"/>
+									</h:inputText>
+								</td>
+								<h:message for="email" errorStyle="color:yellow; display:block"/>
+							</tr>
+							<tr>
+								<td></td>
+								<td>
+									<h:commandButton image="#{loginBean.botaoSubmit}" action="#{loginBean.recuperaSenha}"/>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<div class="clear"></div>
+				<a href="" class="back-login">Voltar ao login</a>
+			</div>
+		</h:form>
+	</div>
+</h:body>
+</html>				
