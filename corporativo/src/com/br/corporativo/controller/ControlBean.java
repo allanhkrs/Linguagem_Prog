@@ -68,8 +68,11 @@ public class ControlBean {
 		return Constantes.BOTAO_CANCELAR;
 	}
 	
+	public String getImgBotaoGerir(){
+		return Constantes.BOTAO_GERIR;
+	}
+	
 	public String aplicaFiltro() {
 		return "filtrado";
 	}
-	
 }

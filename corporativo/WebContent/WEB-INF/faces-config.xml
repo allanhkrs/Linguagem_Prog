@@ -53,6 +53,127 @@
 			<to-view-id>/view/aviaoassentos.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
-		
 	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/adicionarfuncionario.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>funcionarioadicionado</from-outcome>
+			<to-view-id>/view/gerenciamento.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/removerfuncionario.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>funcionarioremovido</from-outcome>
+			<to-view-id>/view/gerenciamento.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/atualizarfuncionario.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>funcionarioatualizado</from-outcome>
+			<to-view-id>/view/gerenciamento.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/adicionarcidade.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>cidadeadicionada</from-outcome>
+			<to-view-id>/view/gerenciamento.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/removercidade.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>cidaderemovida</from-outcome>
+			<to-view-id>/view/gerenciamento.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/adicionarpiloto.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>pilotoadicionado</from-outcome>
+			<to-view-id>/view/gerenciamento.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/removerpiloto.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>pilotoremovido</from-outcome>
+			<to-view-id>/view/gerenciamento.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<navigation-rule>
+		<from-view-id>/view/adicionarvoo.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>vooadicionado</from-outcome>
+			<to-view-id>/view/gerenciamento.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/removervoo.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>vooremovido</from-outcome>
+			<to-view-id>/view/gerenciamento.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/checkinpassageiroger.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>valido</from-outcome>
+			<to-view-id>/view/checkinconfirmager.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/checkinconfirmager.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>valido</from-outcome>
+			<to-view-id>/view/checkinokger.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/consultarvoosger.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>status</from-outcome>
+			<to-view-id>/view/aviaoassentosger.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+	
 </faces-config>
