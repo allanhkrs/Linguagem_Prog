@@ -166,7 +166,7 @@
 					</ul>
 					<div class="nav-divider">&nbsp;</div>
 					<ul class="current">
-						<h:outputLink value="consultavoos.jsf" >
+						<h:outputLink value="consultarvoos.jsf" >
 							<p:graphicImage value="#{controlBean.imgBotaoVoos}"/>
 						</h:outputLink>
 					</ul>
@@ -214,9 +214,9 @@
 											<f:validateLength minimum="8" />
 										</h:inputText>
 									</div>
+									<h:commandButton image="#{controlBean.imgBotaoSubmit}" action="#{checkinBean.validaFindPass}"/>
 									<div class="clear"></div>
 								</div>
-								<h:commandButton image="#{controlBean.imgBotaoSubmit}" action="#{checkinBean.validaFindPass}"/>
 						</h:form>
 					</td>
 					<td id="tbl-border-right"></td>

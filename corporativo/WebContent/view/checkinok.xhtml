@@ -200,31 +200,16 @@
 				<tr>
 					<td id="tbl-border-left"></td>
 					<td>
-						<h:form>
-								<div id="content-table-inner">
-									<div id="table-content">
-										<h3>Nesta seção é possível efetivar o check-in de um passageiro mediante apresentação do código localizador <i>"Find-Pass"</i></h3>
-										<div id="step-holder">
-											<div class="step-no-off">1</div>
-											<div class="step-light-left">Digitar o <i>"Find-Pass"</i></div>
-											<div class="step-light-right">&nbsp;</div>										
-											<div class="step-no">2</div>
-											<div class="step-dark-left"><a href="">Confirmar Check-in</a></div>
-											<div class="step-dark-round">&nbsp;</div>
-											<div class="clear"></div>
-										</div>
-										<p style="line-height: 40px;"><b>Número Localizador do Passageiro (Find-Pass): </b><h:outputText value="A12345L" /></p>
-										<p style="line-height: 40px;"><b>Número do Passageiro: </b><h:outputText value="Juliano Jorge Rojas Montaño" /></p>
-										<p style="line-height: 40px;"><b>CPF: </b><h:outputText value="062.698.456-66" /></p>
-										<p style="line-height: 40px;"><b>Assento: </b><h:outputText value="K3" /></p>
-									</div>
-									<h:commandButton image="#{controlBean.imgBotaoSubmit}" action="#{checkinBean.validaFindPass}" onclick="return confirm('Tem certeza que deseja efetuar o Check-in do Passageiro?');"/>
-									<h:outputLink value="checkinpassageiro.jsf" >
-										<p:graphicImage value="#{controlBean.imgBotaoCancelar}"/>
-									</h:outputLink>
-									<div class="clear"></div>
-								</div>
-						</h:form>
+						<div id="content-table-inner">
+							<div id="table-content">
+								<h2>Check-in Realizado com Sucesso!</h2>
+								<h3>Informe ao passageiro as próximas diretivas.</h3>
+								<h:outputLink value="indexfuncionario.jsf" >
+									<p:graphicImage value="#{controlBean.imgBotaoSubmit}"/>
+								</h:outputLink>
+							</div>
+							<div class="clear"></div>
+						</div>
 					</td>
 					<td id="tbl-border-right"></td>
 				</tr>

@@ -29,7 +29,7 @@ public class CheckinBean implements Serializable {
 	}
 	
 	public String validaFindPass() {
-		return "ok";
+		return "valido";
 	}
 	
 }

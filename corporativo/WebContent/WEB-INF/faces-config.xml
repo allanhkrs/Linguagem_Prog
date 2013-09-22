@@ -18,9 +18,41 @@
 			<from-outcome>funcionario</from-outcome>
 			<to-view-id>/view/indexfuncionario.xhtml</to-view-id>
 			<redirect />
-		</navigation-case>
+		</navigation-case>	
 
 	</navigation-rule>
-
-
+	
+	<navigation-rule>
+	
+		<from-view-id>/view/checkinpassageiro.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>valido</from-outcome>
+			<to-view-id>/view/checkinconfirma.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/checkinconfirma.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>valido</from-outcome>
+			<to-view-id>/view/checkinok.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view/consultarvoos.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>status</from-outcome>
+			<to-view-id>/view/aviaoassentos.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+	</navigation-rule>
 </faces-config>
