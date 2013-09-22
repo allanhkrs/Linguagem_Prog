@@ -5,12 +5,12 @@ public class Usuario {
 	private String nome;
 	private String senha;
 	private String login;
+	private String findpass;
 	
 	public String getLogin() {
 		return login;
 	}
 	public void setLogin(String login) {
-		System.out.println("caiu no setlogin");
 		this.login = login;
 	}
 	public String getNome() {
@@ -18,6 +18,12 @@ public class Usuario {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public String getFindpass() {
+		return findpass;
+	}
+	public void setFindpass(String findpass) {
+		this.findpass = findpass;
 	}
 	public String getSenha() {
 		return senha;

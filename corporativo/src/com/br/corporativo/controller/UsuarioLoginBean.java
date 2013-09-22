@@ -5,14 +5,18 @@ import javax.faces.bean.SessionScoped;
 
 import com.br.corporativo.model.Usuario;
 
-@ManagedBean
+@ManagedBean(name="loginBean")
 @SessionScoped
-public class LoginBean {
+public class UsuarioLoginBean {
 	
 	private Usuario usuario = new Usuario();
 	
-	public String getLogin() {
-		return this.usuario.getLogin();
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
 	public void setLogin(String login) {
@@ -21,9 +25,9 @@ public class LoginBean {
 		}
 		this.usuario.setLogin(login);
 	}
-
-	public String getSenha() {
-		return this.usuario.getSenha();
+	
+	public String getLogin() {
+		return this.usuario.getLogin();
 	}
 
 	public void setSenha(String senha) {
@@ -32,9 +36,13 @@ public class LoginBean {
 		}
 		this.usuario.setSenha(senha);
 	}
+	
+	public String getSenha() {
+		return this.usuario.getSenha();
+	}
 
 	public String validaLogin() {
-		String login = getLogin().toLowerCase();
+		String login = this.usuario.getLogin().toLowerCase();
 		
 		switch (login) {
 		case "gerente":
