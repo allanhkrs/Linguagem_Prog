@@ -10,10 +10,6 @@
 <h:head>
 	<title>Trans-BSI Nerd Airline - Corporativo</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="#{request.contextPath}/static/css/tela.css" />
-	<script type="text/javascript" src="#{request.contextPath}/static/js/jquery-1.4.1.min.js"></script>
-	<script type="text/javascript" src="#{request.contextPath}/static/js/custom_jquery.js"></script>
-	<script type="text/javascript" src="#{request.contextPath}/static/js/jquerypng.js"></script>
-	<script type="text/javascript">$(document).ready(function(){$(document).pngFix( );});</script>
 </h:head>
 
 <h:body id="login-bg">
@@ -53,34 +49,6 @@
 					</table>
 				</div>
 				<div class="clear"></div>
-				<a href="" class="forgot-pwd">Esqueceu sua Senha?</a>
-			</div>
-		</h:form>
-		<h:form>
-			<div id="forgotbox">
-				<div id="forgotbox-text">Por favor digite seu e-mail para receber sua senha.</div>
-				<div id="forgot-inner">
-					<table border="0" cellpadding="0" cellspacing="0">
-							<tr>
-								<td><h:outputLabel value="Email:" for="email" /></td>
-								<td>
-									<h:inputText styleClass="login-inp" id="email" validatorMessage="Digite o email no formato: seunome@seuemail.com.br (até 50 caracteres)" maxlength="50">
-										<f:validateRequired for="email"/>
-										<f:validateRegex pattern="^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"/>
-									</h:inputText>
-								</td>
-								<h:message for="email" errorStyle="color:yellow; display:block"/>
-							</tr>
-							<tr>
-								<td></td>
-								<td>
-									<h:commandButton image="#{controlBean.imgBotaoSubmit}" action="#{loginBean.recuperaSenha}"/>
-								</td>
-							</tr>
-					</table>
-				</div>
-				<div class="clear"></div>
-				<a href="" class="back-login">Voltar ao login</a>
 			</div>
 		</h:form>
 	</div>

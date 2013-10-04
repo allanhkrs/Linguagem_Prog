@@ -46,9 +46,11 @@ public class UsuarioLoginBean {
 		
 		switch (login) {
 		case "gerente":
-			return "gerente";
+			this.usuario.setGerente(true);
+			return "logado";
 		case "funcionario":
-			return "funcionario";
+			this.usuario.setGerente(false);
+			return "logado";
 		default:
 			return "erro";
 		}
@@ -56,6 +58,10 @@ public class UsuarioLoginBean {
 
 	public String recuperaSenha() {
 		return "senha";
+	}
+	
+	public boolean isGerente() {
+		return this.usuario.isGerente();
 	}
 
 }

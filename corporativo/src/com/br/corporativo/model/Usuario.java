@@ -6,6 +6,7 @@ public class Usuario {
 	private String senha;
 	private String login;
 	private String findpass;
+	private boolean gerente = false;
 	
 	public String getLogin() {
 		return login;
@@ -30,6 +31,12 @@ public class Usuario {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public boolean isGerente() {
+		return gerente;
+	}
+	public void setGerente(boolean gerente) {
+		this.gerente = gerente;
 	}
 	
 	
