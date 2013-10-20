@@ -11,83 +11,6 @@
 <h:head>
 	<title>Trans-BSI Nerd Airline - Corporativo</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="#{request.contextPath}/static/css/tela.css" />
-	<script type="text/javascript" src="#{request.contextPath}/static/js/jquery-1.4.1.min.js"></script>
-	<script type="text/javascript" src="#{request.contextPath}/static/js/custom_jquery.js"></script>
-	<script type="text/javascript">$(document).ready(function(){$(document).pngFix( );});</script>
-	<script src="#{request.contextPath}/static/js/ui.core.js" type="text/javascript"></script>
-	<script src="#{request.contextPath}/static/js/ui.checkbox.js" type="text/javascript"></script>
-	<script src="#{request.contextPath}/static/js/jquery.bind.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		$(function() {
-			$('input').checkBox();
-			$('#toggle-all').click(function() {
-				$('#toggle-all').toggleClass('toggle-checked');
-				$('#mainform input[type=checkbox]').checkBox('toggle');
-				return false;
-			});
-		});
-	</script>
-	<script src="#{request.contextPath}/static/js/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.styledselect_form_1').selectbox({
-				inputClass : "styledselect_form_1"
-			});
-			$('.styledselect_form_2').selectbox({
-				inputClass : "styledselect_form_2"
-			});
-		});
-	</script>
-	<script src="#{request.contextPath}/static/js/jquery.selectbox-0.5_style_3.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('.styledselect_pages').selectbox({
-				inputClass : "styledselect_pages"
-			});
-		});
-	</script>
-	<script src="#{request.contextPath}/static/js/jquery.filestyle.js" type="text/javascript"></script>
-	<script type="text/javascript" charset="utf-8">
-		$(function() {
-			$("input.file_1").filestyle({
-				image : "images/forms/choose-file.gif",
-				imageheight : 21,
-				imagewidth : 78,
-				width : 310
-			});
-		});
-	</script>
-	<script src="#{request.contextPath}/static/js/jquery.tooltip.js" type="text/javascript"></script>
-	<script src="#{request.contextPath}/static/js/jquery.dimensions.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		$(function() {
-			$('a.info-tooltip ').tooltip({
-				track : true,
-				delay : 0,
-				fixPNG : true,
-				showURL : false,
-				showBody : " - ",
-				top : -35,
-				left : 5
-			});
-		});
-	</script>
-	<script type="text/javascript">
-		function detalhesassento1() {
-			var opcao = confirm("Assento livre, deseja reservá-lo?");
-			
-		}
-		function detalhesassento2() {
-			alert("Assento reservado por: Ernesto Roosevelt\nStatus: Comprado\nCheck-in Realizado: Sim\nData e Hora do Check-in: 22/09/2013 10:41:00");
-		}		
-	</script>
-	<script src="#{request.contextPath}/static/js/date.js" type="text/javascript"></script>
-	<script type="text/javascript" src="#{request.contextPath}/static/js/jquerypng.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(document).pngFix();
-		});
-	</script>
 </h:head>
 
 <h:body>
@@ -115,7 +38,7 @@
 			<div class="nav">
 				<div class="table">
 					<ul class="current">
-						<h:outputLink value="indexfuncionario.jsf" >
+						<h:outputLink value="index.jsf" >
 							<p:graphicImage value="#{controlBean.imgBotaoPoliticas}"/>
 						</h:outputLink>
 					</ul>
@@ -132,6 +55,13 @@
 						</h:outputLink>
 					</ul>
 					<div class="clear"></div>
+					<c:if test="#{loginBean.gerente == true}">
+						<ul class="current">
+							<h:outputLink value="gerenciamento.jsf" >
+								<p:graphicImage value="#{controlBean.imgBotaoGerir}"/>
+							</h:outputLink>
+						</ul>			
+					</c:if>		
 				</div>
 				<div class="clear"></div>
 			</div>
