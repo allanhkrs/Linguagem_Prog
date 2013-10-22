@@ -1,4 +1,4 @@
-package com.br.reservas.controller;
+package com.br.reservas.managedbeans;
 
 import java.io.Serializable;
 

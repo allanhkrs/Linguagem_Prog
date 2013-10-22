@@ -1,14 +1,17 @@
-package com.br.reservas.controller;
+package com.br.reservas.managedbeans;
 
 import javax.annotation.ManagedBean;
-import javax.enterprise.context.ApplicationScoped;
+import javax.faces.bean.SessionScoped;
 
 import com.br.reservas.util.ConstantesEnum;
 
 
 @ManagedBean
-@ApplicationScoped
+@SessionScoped
 public class ControlBean {
+
+	private String selecionado;
+	private String pesquisar;
 	
 	public String getCaminhoJquery() {
 		return ConstantesEnum.CAMINHO_JQUERY_JS.getConstante();
@@ -32,6 +35,18 @@ public class ControlBean {
 	
 	public String getCaminhoCss(){
 		return ConstantesEnum.CAMINHO_CSS.getConstante();
+	}
+
+	public String getSelecionado() {
+		return selecionado;
+	}
+
+	public void setSelecionado(String selecionado) {
+		this.selecionado = selecionado;
+	}
+	
+	public String getPesquisarPassagem(){
+		return "pesquisar";
 	}
 	
 }

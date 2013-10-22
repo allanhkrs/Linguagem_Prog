@@ -5,9 +5,7 @@
 	version="2.2">
 
 	<navigation-rule>
-
 		<from-view-id>/view/login.xhtml</from-view-id>
-
 		<navigation-case>
 			<from-outcome>logado</from-outcome>
 			<to-view-id>/view/index.xhtml</to-view-id>
@@ -16,31 +14,25 @@
 	</navigation-rule>
 	
 	<navigation-rule>
-	
 		<from-view-id>/view/checkinpassageiro.xhtml</from-view-id>
-		
 		<navigation-case>
 			<from-outcome>valido</from-outcome>
 			<to-view-id>/view/checkinconfirma.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
 	</navigation-rule>
 	
 	<navigation-rule>
 		<from-view-id>/view/checkinconfirma.xhtml</from-view-id>
-		
 		<navigation-case>
 			<from-outcome>valido</from-outcome>
 			<to-view-id>/view/checkinok.xhtml</to-view-id>
 			<redirect/>
 		</navigation-case>
-		
 	</navigation-rule>
 	
 	<navigation-rule>
 		<from-view-id>/view/consultarvoos.xhtml</from-view-id>
-		
 		<navigation-case>
 			<from-outcome>status</from-outcome>
 			<to-view-id>/view/aviaoassentos.xhtml</to-view-id>

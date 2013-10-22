@@ -8,17 +8,8 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<link rel="stylesheet" type="text/css" href="../static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="#{request.contextPath}/static/css/tela.css" />
 	<title>Trans-BSI Nerd Airline</title>
-	<script type="text/javascript" src="../static/js/jquery-1.3.2.min.js"></script>
-	<script type="text/javascript" src="../static/js/script.js"></script>
-	<script type="text/javascript" src="../static/js/cufon-yui.js"></script>
-	<script type="text/javascript" src="../static/js/cuf_run.js"></script>
-	<script type="text/javascript" src="../static/js/arial.js}"></script>
-	<script>
-	function redirect(){ 
-		window.location = "portaldocliente.jsf"
-	}</script>
 </h:head>
 
 <h:body>
@@ -27,7 +18,7 @@
 		
 			<!-- Logo -->
 			<div class="logo">
-				<img src="../static/img/logo.jpg" class="fl" />
+				<img src="#{request.contextPath}/static/img/logo.jpg" class="fl" />
 			</div>
 			
 			<!-- Menu -->
@@ -37,9 +28,9 @@
 				<br></br>
 				<div class="menu_nav">
 					<ul>
-						<li class="active"><a href="index.jsf">Principal</a></li>
-						<li><a href="consultapassagens.jsf">Passagens</a></li>
-						<li><a href="portaldocliente.jsf">Portal do Cliente</a></li>
+						<li class="active"><a href="#{request.contextPath}/view/index.jsf">Principal</a></li>
+						<li><a href="#{request.contextPath}/view/consultapassagens.jsf">Passagens</a></li>
+						<li><a href="#{request.contextPath}/view/portaldocliente.jsf">Portal do Cliente</a></li>
 						<li><a href="#">Serviços</a></li>
 					</ul>
 				</div>
@@ -62,7 +53,7 @@
 						<span class="date">25 de Agosto de 2013</span> &nbsp;|&nbsp;
 						Postado por <a href="#">Allan Neves</a>
 					</p>
-					<img src="../static/img/conteudo01.jpg" width="300" height="300"
+					<img src="#{request.contextPath}/static/img/conteudo01.jpg" width="300" height="300"
 						alt="" class="fl" />
 					<p>	O Grand Caravan EX, lançado pela Cessna Aircraft Company, foi certificado pela ANAC (Agência Nacional de Aviação Civil). A aeronave recebeu sua certificação no FAA em 10 de setembro de 2013 e foi apresentada ao público brasileiro durante a 10ª edição da Labace (Latin American Business Aviation Conference and Exhibition). </p> 
 					<p> A Trans-BSI Nerd Airline anunciou que um modelo foi vendido ainda durante o evento, compondo uma carteira de pedidos para o Grand Caravan EX acima das expectativas. Em seguida, a aeronave seguiu em um tour de demonstração por todo o Brasil. Conhecido em todo o mundo por sua grande versatilidade e segurança, o monomotor turbo-hélice pode levar confortavelmente nove passageiros, sem escalas, de São Paulo a Cuiabá. Outra grande vantagem dessa aeronave é a capacidade de pousar e decolar em pistas curtas (426 m) e adversas, como em campos gramados ou de terra</p>
@@ -76,7 +67,7 @@
 						<span class="date">25 de Agosto de 2013</span> &nbsp;|&nbsp; Postado por <a
 							href="#">Welyton Schultz</a>
 					</p>
-					<img src="../static/img/maceio.jpg" width="209" height="238" alt=""
+					<img src="#{request.contextPath}/static/img/maceio.jpg" width="209" height="238" alt=""
 						class="fl" />
 					<p>
 						A Trans-BSI está com super tarifas imperdíveis para Maceió. Você pode obter até 75% de desconto nas compra de passagens em período de ofertas relâmpago.
@@ -99,7 +90,7 @@
 								<h:outputLabel for="senha" value="Senha: " />
 									<p:password id="inputSenha" value="" required="true" requiredMessage="Você não digitou uma senha." />
 								<f:facet name="footer">
-									<p:commandButton id="btnLogar" onclick="redirect();" type="button" value="Entrar" icon="ui-icon-check" />
+									<p:commandButton id="btnLogar" type="button" value="Entrar" icon="ui-icon-check" />
 								</f:facet>
 							</p:panelGrid>
 						</h:form>

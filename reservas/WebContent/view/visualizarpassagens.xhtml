@@ -39,61 +39,51 @@
 
 			<div class="clr"></div>
 		</div>
-
 		<div class="content"> 
 			<div class="article">
-				  <h:form>
-				    <p:dataTable id="tbVoo" var="voo" value="#{tableBean.smallCarsModel}" rowKey="#{car.model}"  
-				                 selection="#{tableBean.selectedCar}" selectionMode="single">  
-				  
-				        <f:facet name="header">  
-				            Escolha Seu Voo - Origem : Curitiba (CWB) - Destino : São Paulo (SP) 
-				        </f:facet>  
-				  
-				        <p:column headerText="Voo">  
-				            #{car.model}  
+				<h:form id="formTabela" >
+		            <p:dataTable value="#{vooBean.voos}" var="voo" rowKey="#{voo.id}" emptyMessage="Nenhum produto encontrado!" style="margin-top: 5px;" >
+		                <f:facet name="header">
+		                    <i>Clique na Lupa para verificar o Status Atual do voo selecionado.</i>
+		                </f:facet>
+		                
+		                <p:column headerText="ID" style="text-align: center; width: 40px;">
+		                    <h:outputText value="#{voo.id}"/>
+		                </p:column>
+		                
+		                <p:column headerText="Data / Hora" style="text-align: center; width: 40px;">
+		                    <h:outputText value="#{voo.dataHora}"/>
+		                </p:column>
+		                 	
+		                <p:column headerText="Piloto" style="text-align: center; width: 40px;">
+		                    <h:outputText value="#{voo.piloto}"/>
+		                </p:column>
+		                
+		                <p:column headerText="Origem" style="text-align: center; width: 40px;">
+		                    <h:outputText value="#{voo.origem}"/>
+		                </p:column>
+		                
+		                <p:column headerText="Destino" style="text-align: center; width: 40px;">
+		                    <h:outputText value="#{voo.destino}"/>
+		                </p:column>
+		                
+		                <p:column headerText="Vagas (1ª Classe)" style="text-align: center; width: 40px;">
+		                    <h:outputText value="#{voo.quantidadeAssentosPrimeira}"/>
+		                </p:column>
+		                
+		                <p:column headerText="Vagas (Classe Econômica)" style="text-align: center; width: 40px;">
+		                    <h:outputText value="#{voo.quantidadeAssentosEconomica}"/>
+		                </p:column>
+		                							                
+				        <p:column headerText="Visualizar" style="text-align: center; width:4%">  
+				            <p:commandButton id="btnSelecionado" icon="ui-icon-search" title="Visualizar Status" action="#{vooBean.statusVoo}">  
+				                <f:setPropertyActionListener value="#{voo}" target="#{vooBean.selecionado}" />  
+				            </p:commandButton>  
 				        </p:column>  
-				  
-				        <p:column headerText="Partida">  
-				            #{car.year}  
-				        </p:column>  
-				  
-				        <p:column headerText="Chegada" >  
-				            #{car.manufacturer}  
-				        </p:column>  
-				  
-				        <p:column headerText="Aeroporto">  
-				            #{car.color}  
-				        </p:column> 
-				    </p:dataTable>  
-				    <p:dialog id="voo" header="Car Detail" widgetVar="dialogoVoo" resizable="false"  
-				              width="200" showEffect="clip" hideEffect="fold">  
-				  
-				        <h:panelGrid id="displayVoo" columns="2" cellpadding="4">  
-				  
-				            <f:facet name="header">  
-				                <p:graphicImage value="/images/cars/#{tableBean.selectedCar.manufacturer}.jpg"/>  
-				            </f:facet>  
-				  
-				            <h:outputText value="Model:" />  
-				            <h:outputText value="modelo" />  
-				  
-				            <h:outputText value="Year:" />  
-				            <h:outputText value="ano" />  
-				  
-				            <h:outputText value="Manufacturer:" />  
-				            <h:outputText value="fabricante" />  
-				  
-				            <h:outputText value="Color:" />  
-				            <h:outputText value="cor" />  
-				        </h:panelGrid>  
-				    </p:dialog>
-				</h:form>
-				<a href="aviaoassentos2.jsf">Escolher Assento</a> 
-				<br/><br/><br/><br/>
-			</div> 
-		</div>				
-		<br/>
+		            </p:dataTable>
+		        </h:form>    
+			</div>
+		</div>
 		<div class="fbg">
 			<div class="col c1">
 				<h2>
